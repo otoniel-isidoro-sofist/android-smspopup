@@ -231,7 +231,7 @@ public class SmsPopupConfigActivity extends PreferenceActivity {
             }
         }
 
-        Eula.show(this);
+//        Eula.show(this);
     }
 
     @Override

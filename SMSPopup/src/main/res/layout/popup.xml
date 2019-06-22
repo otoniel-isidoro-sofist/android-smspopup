@@ -12,7 +12,7 @@
         <net.everythingandroid.smspopup.controls.SmsPopupPager
             android:id="@+id/SmsPopupPager"
             android:layout_width="match_parent"
-            android:layout_height="@+dimen/smspopup_pager_height"
+            android:layout_height="@dimen/smspopup_pager_height"
             android:layout_centerInParent="true" >
         </net.everythingandroid.smspopup.controls.SmsPopupPager>
 

@@ -209,11 +209,13 @@ public class SmsPopupPager extends ViewPager implements OnPageChangeListener {
 
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+        mPagerIndicator.setContentDescription("total:" + getPageCount() + ";currentPosition:" + position);
         super.onPageScrolled(position, positionOffset, positionOffsetPixels);
     }
 
     @Override
     public void onPageSelected(int position) {
+        mPagerIndicator.setContentDescription("total:" + getPageCount() + ";currentPosition:" + position);
         currentPage = position;
     }
 
@@ -223,8 +225,16 @@ public class SmsPopupPager extends ViewPager implements OnPageChangeListener {
             mPagerIndicator.setOnPageChangeListener(new SimpleOnPageChangeListener() {
                 @Override
                 public void onPageSelected(int position) {
+                    mPagerIndicator.setContentDescription("total:" + getPageCount() + ";currentPosition:" + position);
                     currentPage = position;
                 }
+
+                @Override
+                public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+                    mPagerIndicator.setContentDescription("total:" + getPageCount() + ";currentPosition:" + position);
+                    super.onPageScrolled(position, positionOffset, positionOffsetPixels);
+                }
+
             });
         }
     }

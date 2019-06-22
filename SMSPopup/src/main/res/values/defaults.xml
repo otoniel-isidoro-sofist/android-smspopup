@@ -24,12 +24,12 @@
     <string name="pref_notif_repeat_times_default">2</string>
     <bool name="pref_notif_repeat_screen_on_default">false</bool>
     <string name="pref_button1_default">1</string>
-    <string name="pref_button2_default">2</string>
-    <string name="pref_button3_default">5</string>
+    <string name="pref_button2_default">5</string>
+    <string name="pref_button3_default">2</string>
     <bool name="pref_quickreply_default">true</bool>
-    <bool name="pref_delivery_report_default">false</bool>
+    <bool name="pref_delivery_report_default">true</bool>
     <bool name="pref_split_message_default">false</bool>
-    <bool name="pref_autorotate_default">true</bool>
+    <bool name="pref_autorotate_default">false</bool>
     <bool name="pref_screen_on_default">true</bool>
 
 </resources>

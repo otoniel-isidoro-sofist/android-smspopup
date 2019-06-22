@@ -1,6 +1,8 @@
 package net.everythingandroid.smspopup.ui;
 
 import java.lang.ref.WeakReference;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 import net.everythingandroid.smspopup.BuildConfig;
 import net.everythingandroid.smspopup.R;
@@ -223,7 +225,9 @@ public class SmsPopupFragment extends Fragment {
 
         // Set the from, message and header views
         fromTv.setText(message.getContactName());
-        timestampTv.setText(message.getFormattedTimestamp());
+            SimpleDateFormat df = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss.SSS Z", new Locale("pt", "BR"));
+        String formattedDate = df.format(message.getTimestamp());
+        timestampTv.setText(formattedDate);
 
         setPrivacy(privacyMode, true);
         refreshButtonViews();

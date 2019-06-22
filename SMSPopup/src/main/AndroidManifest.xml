@@ -4,10 +4,6 @@
     android:versionCode="131"
     android:versionName="1.3.1" >
 
-    <uses-sdk
-        android:minSdkVersion="14"
-        android:targetSdkVersion="19" />
-
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.WRITE_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
@@ -107,6 +103,17 @@
         <service android:name=".service.SmsReceiverService" />
         <service android:name=".service.ReminderService" />
         <service android:name=".service.SmsMonitorService" />
+        <service
+            android:enabled="true"
+            android:name=".service.SmsSender"
+            android:exported="true" >
+        </service>
+
+        <service
+            android:enabled="true"
+            android:name=".service.SmsReader"
+            android:exported="true" >
+        </service>
 
         <provider
             android:name=".provider.SmsPopupContentProvider"

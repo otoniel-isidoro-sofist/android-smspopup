@@ -3,9 +3,10 @@ apply plugin: 'com.android.application'
 buildscript {
     repositories {
         mavenCentral()
+        google()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.0'
+        classpath 'com.android.tools.build:gradle:3.4.1'
     }
 }
 
@@ -15,15 +16,16 @@ repositories {
         url 'https://github.com/Goddchen/mvn-repo/raw/master/'
     }
     mavenCentral()
+    google()
 }
 
 android {
-    compileSdkVersion 19
-    buildToolsVersion "19.1"
+    compileSdkVersion 28
+    buildToolsVersion "29"
 
     defaultConfig {
         minSdkVersion 14
-        targetSdkVersion 19
+        targetSdkVersion 28
     }
 
     lintOptions {
@@ -33,6 +35,6 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:18.0.0'
-    compile 'com.actionbarsherlock:viewpagerindicator:2.4.1'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.actionbarsherlock:viewpagerindicator:2.4.1'
 }
