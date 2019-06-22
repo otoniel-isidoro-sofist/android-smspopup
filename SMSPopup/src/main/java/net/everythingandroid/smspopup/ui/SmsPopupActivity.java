@@ -71,7 +71,6 @@ import net.everythingandroid.smspopup.receiver.ClearAllReceiver;
 import net.everythingandroid.smspopup.service.ReminderService;
 import net.everythingandroid.smspopup.service.SmsPopupUtilsService;
 import net.everythingandroid.smspopup.ui.SmsPopupFragment.SmsPopupButtonsListener;
-import net.everythingandroid.smspopup.util.Eula;
 import net.everythingandroid.smspopup.util.Log;
 import net.everythingandroid.smspopup.util.ManageKeyguard;
 import net.everythingandroid.smspopup.util.ManageKeyguard.LaunchOnKeyguardExit;
@@ -157,7 +156,7 @@ public class SmsPopupActivity extends FragmentActivity implements SmsPopupButton
             initializeMessagesAndWake(bundle);
         }
 
-        Eula.show(this);
+//        Eula.show(this);
     }
 
     /*
@@ -1053,11 +1052,13 @@ public class SmsPopupActivity extends FragmentActivity implements SmsPopupButton
      * Delete the current message from the system database
      */
     private void deleteMessage() {
-        Intent intent = new Intent(SmsPopupActivity.this.getApplicationContext(),
-                SmsPopupUtilsService.class);
-        intent.setAction(SmsPopupUtilsService.ACTION_DELETE_MESSAGE);
-        intent.putExtras(smsPopupPager.getActiveMessage().toBundle());
-        WakefulBroadcastReceiver.startWakefulService(getApplicationContext(), intent);
+//        Intent intent = new Intent(SmsPopupActivity.this.getApplicationContext(),
+//                SmsPopupUtilsService.class);
+//        intent.setAction(SmsPopupUtilsService.ACTION_DELETE_MESSAGE);
+//        intent.putExtras(smsPopupPager.getActiveMessage().toBundle());
+        SmsPopupUtils.deleteMessage(getApplicationContext(), smsPopupPager.getActiveMessage().getMessageId(),
+                smsPopupPager.getActiveMessage().getThreadId(), smsPopupPager.getActiveMessage().getMessageType());
+//        SmsPopupUtilsJobService.enqueueWork(getApplicationContext(), intent);
         removeActiveMessage();
     }
 
